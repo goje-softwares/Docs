@@ -1,0 +1,11 @@
+{
+  "product": {
+    "id": { "type": "string", "required": true },
+    "name": { "type": "string", "required": true, "range": [2, 25] },
+    "hintName": { "type": "string", "required": false, "range": [2, 25] },
+    "amount": { "type": "number", "required": true },
+    "weight": { "type": "number", "required": false },
+    "price": { "type": "number", "required": true },
+    "note": { "type": "string", "required": false, "range": [0, 550] }
+  }
+}
