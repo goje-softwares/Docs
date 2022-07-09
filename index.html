@@ -18,10 +18,13 @@
                     <a href="#authentication">احراز هویت</a>
                     <ul>
                         <li><a href="#authentication-register">ثبت نام</a></li>
+                        <li><a href="#authentication-login">ورود</a></li>
+                        <li><a href="#authentication-logout">خروج</a></li>
                     </ul>
                 </li>
             </ul>
         </div>
+
         <div id="main">
             <section id="authentication">
                 <h1>احراز هویت</h1>
@@ -53,14 +56,17 @@
                         </tr>
                         <tr>
                             <td class="text-align-center" data-align="center">‌Body</td>
-                            <td class="text-align-left" data-align="left">name=username&email=email@example.com&password=12345678</td>
-                            <td class="text-align-center" data-align="center">نام کاربر name, ایمیل email, پسورد password</td>
+                            <td class="text-align-left" data-align="left">
+                                name=username&email=email@example.com&password=12345678
+                            </td>
+                            <td class="text-align-center" data-align="center">نام کاربر name, ایمیل email, پسورد
+                                password
+                            </td>
                         </tr>
                         </tbody>
                     </table>
-<h4>curl درخواست</h4>
-                        <pre><code>curl -X POST http://localhost:8001/api/auth/v0/register -H "Content-Type: application/x-www-form-urlencoded" -d "name=username&email=email@example.com&password=12345678"</code></pre>
-                    </div>
+                    <h4>curl درخواست</h4>
+                    <pre><code>curl -X POST http://localhost:8001/api/auth/v0/register -H "Content-Type: application/x-www-form-urlencoded" -d "name=username&email=email@example.com&password=12345678"</code></pre>
                     <div class="route-params">
                         <p class="title">پارامتر ها</p>
                         <table>
@@ -113,6 +119,66 @@
                             <p>یک پیام شامل ولیدشن ارور رو بر میگردونه</p>
                         </div>
                     </div>
+                </div>
+                <div id="authentication-login">
+                    <h2 class="title">ورود</h2>
+                    <h3>اطلاعات درخواست:</h3>
+                    <table>
+                        <tbody>
+                        <tr>
+                            <td class="text-align-center" data-align="center"><strong>Parameter</strong></td>
+                            <td class="text-align-left" data-align="left"><strong>Value</strong></td>
+                            <td class="text-align-center" data-align="center"><strong>Description</strong></td>
+                        </tr>
+                        <tr>
+                            <td class="text-align-center" data-align="center">URL</td>
+                            <td class="text-align-left" data-align="left">Base URL}}/api/v0/auth/login}}</td>
+                            <td class="text-align-center" data-align="center">آدرس درخواست</td>
+                        </tr>
+                        <tr>
+                            <td class="text-align-center" data-align="center">Method Type</td>
+                            <td class="text-align-left" data-align="left">POST</td>
+                            <td class="text-align-center" data-align="center">متد درخواست</td>
+                        </tr>
+                        <tr>
+                            <td class="text-align-center" data-align="center">Body Type</td>
+                            <td class="text-align-left" data-align="left">Form data</td>
+                            <td class="text-align-center" data-align="center">نوع بدنه ارسالی درخواست</td>
+                        </tr>
+                        <tr>
+                            <td class="text-align-center" data-align="center">‌Body</td>
+                            <td class="text-align-left" data-align="left">
+                                email=email@example.com&password=12345678
+                            </td>
+                            <td class="text-align-center" data-align="center">ایمیل email, پسورد
+                                password
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div id="authentication-logout">
+                    <h2 class="title">خروج</h2>
+                    <h3>اطلاعات درخواست:</h3>
+                    <table>
+                        <tbody>
+                        <tr>
+                            <td class="text-align-center" data-align="center"><strong>Parameter</strong></td>
+                            <td class="text-align-left" data-align="left"><strong>Value</strong></td>
+                            <td class="text-align-center" data-align="center"><strong>Description</strong></td>
+                        </tr>
+                        <tr>
+                            <td class="text-align-center" data-align="center">URL</td>
+                            <td class="text-align-left" data-align="left">Base URL}}/api/v0/auth/logout}}</td>
+                            <td class="text-align-center" data-align="center">آدرس درخواست</td>
+                        </tr>
+                        <tr>
+                            <td class="text-align-center" data-align="center">Method Type</td>
+                            <td class="text-align-left" data-align="left">POST</td>
+                            <td class="text-align-center" data-align="center">متد درخواست</td>
+                        </tr>
+                        </tbody>
+                    </table>
                 </div>
             </section>
         </div>
