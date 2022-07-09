@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/fonts/fonts.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+<div id="app">
+    <div class="flex">
+        <div id="side-bar">
+            <ul>
+                <li>
+                    <a href="#authentication">احراز هویت</a>
+                    <ul>
+                        <li><a href="#authentication-register">ثبت نام</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div id="main">
+            <section id="authentication">
+                <h1>احراز هویت</h1>
+                <hr>
+                <div id="authentication-register">
+                    <h2 class="title">ثبت نام</h2>
+                    <h3>اطلاعات درخواست:</h3>
+                    <table>
+                        <tbody>
+                        <tr>
+                            <td class="text-align-center" data-align="center"><strong>Parameter</strong></td>
+                            <td class="text-align-left" data-align="left"><strong>Value</strong></td>
+                            <td class="text-align-center" data-align="center"><strong>Description</strong></td>
+                        </tr>
+                        <tr>
+                            <td class="text-align-center" data-align="center">URL</td>
+                            <td class="text-align-left" data-align="left">Base URL}}/api/v0/auth/register}}</td>
+                            <td class="text-align-center" data-align="center">آدرس درخواست</td>
+                        </tr>
+                        <tr>
+                            <td class="text-align-center" data-align="center">Method Type</td>
+                            <td class="text-align-left" data-align="left">POST</td>
+                            <td class="text-align-center" data-align="center">متد درخواست</td>
+                        </tr>
+                        <tr>
+                            <td class="text-align-center" data-align="center">Body Type</td>
+                            <td class="text-align-left" data-align="left">Form data</td>
+                            <td class="text-align-center" data-align="center">نوع بدنه ارسالی درخواست</td>
+                        </tr>
+                        <tr>
+                            <td class="text-align-center" data-align="center">‌Body</td>
+                            <td class="text-align-left" data-align="left">name=username&email=email@example.com&password=12345678</td>
+                            <td class="text-align-center" data-align="center">نام کاربر name, ایمیل email, پسورد password</td>
+                        </tr>
+                        </tbody>
+                    </table>
+<h4>curl درخواست</h4>
+                        <pre><code>curl -X POST http://localhost:8001/api/auth/v0/register -H "Content-Type: application/x-www-form-urlencoded" -d "name=username&email=email@example.com&password=12345678"</code></pre>
+                    </div>
+                    <div class="route-params">
+                        <p class="title">پارامتر ها</p>
+                        <table>
+                            <thead>
+                            <tr>
+                                <td>title</td>
+                                <td>type</td>
+                                <td>description</td>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>name</td>
+                                <td>string</td>
+                                <td>اسم کاربر</td>
+                            </tr>
+                            <tr>
+                                <td>email</td>
+                                <td>string</td>
+                                <td>ایمیل</td>
+                            </tr>
+                            <tr>
+                                <td>password</td>
+                                <td>string</td>
+                                <td>پسورد</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="route-response">
+                        <div class="route-response_ok">
+                            <p class="title">درست</p>
+                            <p class="description">در صورتی که درخواست به صورت کامل انجام شود پاسخی با قالب زیر را بر
+                                میگرداند.</p>
+                            <p>نمونه پاسخ صحیح</p>
+                            <pre><code>{
+    "data": {
+        "name": "اشکان فکری",
+        "email": "c@g.com",
+        "updated_at": "2022-07-05T02:37:55.000000Z",
+        "created_at": "2022-07-05T02:37:55.000000Z",
+        "id": 19
+    },
+    "access_token": "9|7KC9guabjgoiXI6krrdmTDpEqETT5T26KXC7QpgW",
+    "token_type": "Bearer"
+}</code></pre>
+                        </div>
+                        <div class="route-response_fail">
+                            <p class="title">fail</p>
+                            <p>یک پیام شامل ولیدشن ارور رو بر میگردونه</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+</body>
+</html>
